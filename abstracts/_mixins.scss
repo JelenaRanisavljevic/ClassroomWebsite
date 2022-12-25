@@ -1,0 +1,12 @@
+
+@mixin gap-1 {
+    gap: 1rem;
+}
+@mixin gap-2 {
+    gap:2rem;
+}
+@mixin center {
+    justify-content: center;
+    text-align: center;
+    justify-items: center;
+}

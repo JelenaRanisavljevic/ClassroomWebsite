@@ -1,0 +1,13 @@
+@use "../abstracts/colors" as *;
+
+.text-yellow {
+    color: $clr-pale-yellow;
+}
+.text-crossed {
+    text-decoration:line-through;
+    font-weight: 300;
+}
+.bold {
+    font-weight: 900;
+    font-size: 24px;
+}

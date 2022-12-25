@@ -1,0 +1,122 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/mixins" as *;
+
+.carousel {
+    height: 300px;
+    width: 100%;
+    bottom: 0;
+    margin-left: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    @media only screen and (min-width:601px) and (max-width: 801px) {
+        @include center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+    }
+    @media only screen and (max-width: 600px) {
+        @include center;
+        display: grid;
+        grid-template-columns: 1fr;
+
+    }
+  }
+  
+  .carousel-card {
+    display: flex;
+    height: 280px;
+    width: 200px;
+    background-color: $clr-pale-yellow;
+    border-radius: 10px;
+    box-shadow: -1rem 0 3rem #000;
+  /*   margin-left: -50px; */
+    transition: 0.4s ease-out;
+    position: relative;
+    left: 0px;
+  }
+  
+  .carousel-card:not(:first-child) {
+      margin-left: -50px;
+  }
+  
+  .carousel-card:hover {
+    transform: translateY(-20px);
+    transition: 0.4s ease-out;
+  }
+  
+  .carousel-card:hover ~ .carousel-card {
+    position: relative;
+    left: 50px;
+    transition: 0.4s ease-out;
+  }
+  
+  .carousel-title {
+    color: rgb(106, 10, 10);
+    font-weight: 900;
+    position: absolute;
+    left: 20px;
+    top: 15px;
+  }
+  .carousel-subtitle {
+    color: rgb(106, 10, 10);
+    font-weight: 300;
+    position: absolute;
+    text-align: justify;
+    left: 20px;
+    top: 35px;
+  }
+  .price {
+    color: rgb(106, 10, 10);
+    font-weight: 900;
+    position: absolute;
+    left: 50px;
+    top: 70px;
+  }
+  
+  .bar {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    height: 5px;
+    width: 150px;
+  }
+  
+  .emptybar {
+    background-color: #640a07;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .filledbar {
+    position: absolute;
+    top: 0px;
+    z-index: 3;
+    width: 0px;
+    height: 100%;
+    background: rgb(124, 6, 6);
+    background: linear-gradient(90deg, rgb(217, 123, 0) 0%, rgb(240, 236, 7) 65%, rgba(255,186,0,1) 100%);
+    transition: 0.6s ease-out;
+  }
+  
+  .carousel-card:hover .filledbar {
+    width: 120px;
+    transition: 0.4s ease-out;
+  }
+  
+  .circle {
+    position: absolute;
+    top: 150px;
+    left: calc(50% - 60px);
+  }
+  
+  .stroke {
+    stroke: white;
+    stroke-dasharray: 360;
+    stroke-dashoffset: 360;
+    transition: 0.6s ease-out;
+  }
+  .carousel-card:hover .stroke {
+    stroke-dashoffset: 100;
+    transition: 0.6s ease-out;
+  }

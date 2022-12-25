@@ -1,0 +1,13 @@
+@use "../abstracts/abstracts" as *;
+@use "../abstracts/mixins" as *;
+
+.card {
+    @include center;
+    @include gap-1;
+    background-color: $clr-pale-yellow;
+    border-radius: 20px;
+}
+.card-image {
+    width: 300px;
+    height: 250px;
+}

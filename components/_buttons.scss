@@ -1,0 +1,24 @@
+@use "../abstracts/abstracts" as *;
+
+.btn {
+    border: 1px solid $clr-maroon;
+    background-color: $clr-maroon;
+    color: $clr-pale-yellow;
+    cursor: pointer;
+    &:hover{
+        color: $clr-maroon;
+        background-color: $clr-pale-yellow;
+    }
+    &:active{
+        border: 3px solid $clr-maroon;
+        font-weight: 900;
+    }
+}
+.btn-primary {
+    padding: 20px 30px;
+    border-radius: 15px;
+}
+.btn-secondary {
+    padding: 30px 30px;
+    border-radius: 50%;
+}
